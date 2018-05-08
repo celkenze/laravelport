@@ -1,27 +1,20 @@
 <template>
-  <button >Compteur : {timerObj}</button>
+  <button class="btn btn-info" @click.prevent="mounted" >Compteur : {{timerObj}}</button>
 </template>
 
 
-<script>
+<script lang="js">
 export default {
-  name: "exo-7-comp",
-  props: ["timerObj"],
-  mounted() {
-    if (this.timer == "true") {
-      this.startTimer();
-    } else {
-      this.timerWidth = 0;
-    }
-  },
+  name: "exo-4-comp",
+  props: [],
   data() {
     return {
-        timerObj = 1000
+      timerObj: 1000,
     };
   },
   methods: {
     startTimer() {
-      timerObj = window.setInterval(this.timerTick(), 1000);
+      timerObj = window.setInterval(this.timerTick, 1000);
       this.timerFormat();
     },
 
@@ -58,6 +51,13 @@ export default {
       let amount = 100 / this.timerseconds;
       this.timerWidth -= amount;
     }
-  }
+  },
+  mounted() {
+    if (this.timer == "true") {
+      this.startTimer();
+    } else {
+      this.timerWidth = 0;
+    }
+  },
 };
 </script>

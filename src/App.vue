@@ -3,9 +3,13 @@
     <div id="exo">
       <!-- <router-link class="btn" :to="element.name">{{element.name}}</router-link> -->
       <h1>Titolo Ex DOM Vue.js</h1>
+     
       <router-link v-for="element in boutons" :key="element.name" :class="element.color" class="btn mr-3" :to="element.name">{{element.name}}</router-link>
     </div>
+     <transition name="slide">
     <router-view/>
+    </transition>
+     
   </div>
 </template>
 
@@ -39,5 +43,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.slide-enter-active {
+  transition: opacity 1s, transform 2s;
+}
+
+.slide-enter,
+.slide-leave {
+  opacity: 0;
+  transform: translateX(-50%);
 }
 </style>

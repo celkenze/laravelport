@@ -1,7 +1,7 @@
 <template>
   <div class="exo1">
       <h1>Exo 1</h1>
-     <p> {{msg}} </p> 
+     <p> {{msg}} </p>
   </div>
 </template>
 

@@ -15,7 +15,6 @@
 
 <script>
 export default {
-  name: "exo3",
   data() {
     return {
       valueText: "inconnu",

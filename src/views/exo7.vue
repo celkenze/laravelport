@@ -36,6 +36,11 @@
             </div>
 </template>
 
+
+
+
+
+
 <script>
 import exo7Comp from "../components/exo7Comp";
 
@@ -53,13 +58,20 @@ export default {
   methods: {
     ajouter() {
       this.maList.push(this.value);
-      num++;
+      this.num++;
       this.newText = this.value;
       this.value = "";
     }
   }
 };
 </script>
+
+
+
+
+
+
+
 
 <style lang="scss" scoped>
 #exo-7-panel {

@@ -6,9 +6,9 @@
                 <div class="resultat text-right mr-5"></div>
                 <input type="text" class="affichage text-right" v-model="value">
             </div>
-            <div class="row">
-                <div class="col-md-3 col-lg-3"  v-for="element in boutons" :key="element.name">
-                    <button class="btn btn-success col-md-3" @click.prevent="fonction" > {{element.name}} 
+            <div class="row" v-for="n in Math.ceil(boutons.length/4)" :key="n">
+                <div class="col-md-3 col-lg-3"  v-for="(element,index) in boutons.slice((n-1)*4, n*4)" :key="index">
+                    <button class="btn btn-success col-md-3" @click.prevent="value += element.name" > {{element.name}} 
                     </button>
                 </div>
             </div>
